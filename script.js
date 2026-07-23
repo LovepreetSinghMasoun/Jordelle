@@ -3,8 +3,19 @@
 // ==============================
 const searchInput = document.querySelector(".search-box input");
 const searchButton = document.querySelector(".search-box button");
-const moodButtons = document.querySelectorAll(".mood-grid button");
+const moodButtons = document.querySelectorAll(".mood-grid button, .tags button");
+const surpriseButton = document.querySelector(".surprise"); // adjust selector to match your button
 
+const surprisePool = [
+    "Enemies to Lovers",
+    "Slow Burn",
+    "Friends to Lovers",
+    "Dark Romance",
+    "Fake Dating",
+    "Second Chance Romance",
+    "Grumpy Sunshine",
+    "Forbidden Love"
+];
 // ==============================
 // EVENT LISTENERS
 // ==============================
@@ -14,6 +25,12 @@ searchInput.addEventListener("keypress", (e) => {
     if (e.key === "Enter") handleSearch();
 });
 
+surpriseButton.addEventListener("click", () => {
+    const randomPick = surprisePool[Math.floor(Math.random() * surprisePool.length)];
+    searchInput.value = randomPick;
+    handleSearch();
+});
+
 moodButtons.forEach((button) => {
     button.addEventListener("click", () => {
         const cleanText = button.innerText.replace(/[^a-zA-Z\s]/g, "").trim();
@@ -21,7 +38,6 @@ moodButtons.forEach((button) => {
         handleSearch();
     });
 });
-
 // Load a default set of books as soon as the page opens
 window.addEventListener("DOMContentLoaded", () => {
     searchBooks("romance", true);
@@ -58,11 +74,11 @@ async function searchBooks(query, isInitialLoad = false) {
     const term = isInitialLoad ? query : `${query} romance`;
     const safeQuery = encodeURIComponent(term);
 
-    const openLibraryReq = fetch(`https://openlibrary.org/search.json?q=${safeQuery}&limit=20`)
+    const openLibraryReq = fetch(`https://openlibrary.org/search.json?q=${safeQuery}&limit=30`)
         .then((res) => res.json())
         .catch(() => ({ docs: [] }));
 
-    const googleBooksReq = fetch(`https://www.googleapis.com/books/v1/volumes?q=${safeQuery}&maxResults=20`)
+    const googleBooksReq = fetch(`https://www.googleapis.com/books/v1/volumes?q=${safeQuery}&maxResults=30`)
         .then((res) => res.json())
         .catch(() => ({ items: [] }));
 
@@ -72,7 +88,7 @@ async function searchBooks(query, isInitialLoad = false) {
 
     // Open Library results
     if (openData.docs) {
-        openData.docs.slice(0, 10).forEach((book) => {
+        openData.docs.slice(0, 20).forEach((book) => {
             books.push({
                 title: book.title,
                 author: book.author_name?.[0] || "Unknown Author",
@@ -86,7 +102,7 @@ async function searchBooks(query, isInitialLoad = false) {
 
     // Google Books results
     if (googleData.items) {
-        googleData.items.slice(0, 10).forEach((book) => {
+        googleData.items.slice(0, 20).forEach((book) => {
             const info = book.volumeInfo;
             books.push({
                 title: info.title,
