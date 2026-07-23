@@ -1,0 +1,844 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    font-family:Inter,sans-serif;
+
+    background:#F8F4ED;
+
+    color:#111;
+
+}
+
+img{
+
+    width:100%;
+
+    display:block;
+
+}
+
+a{
+
+    text-decoration:none;
+
+}
+
+button{
+
+    cursor:pointer;
+
+    border:none;
+
+}
+:root{
+
+--green:#0D2418;
+
+--green2:#173525;
+
+--gold:#D4A552;
+
+--cream:#F7F1E8;
+
+--shadow:0 10px 30px rgba(0,0,0,.18);
+
+}
+.hero{
+    min-height:650px;
+    padding:80px;
+}
+header{
+
+height:90px;
+
+background:var(--green);
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+padding:0 70px;
+
+}
+
+.logo h1{
+
+font-family:"Cormorant Garamond",serif;
+
+font-size:58px;
+
+font-weight:600;
+
+color:white;
+
+}
+
+.logo span{
+
+color:var(--gold);
+
+font-size:13px;
+
+letter-spacing:2px;
+
+text-transform:uppercase;
+
+}
+
+nav{
+
+display:flex;
+
+gap:45px;
+
+}
+
+nav a{
+
+color:white;
+
+font-size:18px;
+
+transition:.3s;
+
+}
+
+nav a:hover{
+
+color:var(--gold);
+
+}
+
+.active{
+
+color:var(--gold);
+
+}
+
+.nav-icons{
+
+display:flex;
+
+gap:25px;
+
+color:var(--gold);
+
+font-size:22px;
+
+align-items:center;
+border: 2px solid var(--gold);
+  border-radius: 8px; /* Optional: rounds the corners slightly */
+  padding: 10px 15px; /
+
+}
+
+.profile{
+
+width:45px;
+
+height:45px;
+
+border-radius:50%;
+
+background:#23402E;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+}
+.hero{
+
+background:linear-gradient(to right,#07150D,#1B2F23);
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+padding:80px;
+
+min-height:650px;
+
+}
+
+.hero-text{
+
+width:55%;
+
+}
+
+.hero-text h2{
+
+font-family:"Cormorant Garamond",serif;
+
+font-size:72px;
+
+line-height:1.05;
+
+color:white;
+
+}
+
+.hero-text span{
+
+color:var(--gold);
+
+}
+
+.hero-text p{
+
+margin:35px 0;
+
+font-size:22px;
+
+line-height:1.8;
+
+color:#ddd;
+
+}
+.tags{
+
+display:flex;
+
+gap:18px;
+
+margin-top:35px;
+
+flex-wrap:wrap;
+
+}
+
+.tags button{
+
+background:#163624;
+
+color:white;
+
+padding:15px 28px;
+
+border-radius:40px;
+
+border:1px solid rgba(255,255,255,.15);
+
+transition:.3s;
+
+}
+
+.tags button:hover{
+
+background:var(--gold);
+
+color:black;
+
+}
+.search-box{
+
+display:flex;
+
+margin-top:30px;
+
+}
+
+.search-box input{
+
+width:70%;
+
+height:70px;
+
+padding-left:30px;
+
+font-size:18px;
+
+border-radius:14px 0 0 14px;
+
+border:none;
+
+outline:none;
+
+}
+
+.search-box button{
+
+width:220px;
+
+background:var(--gold);
+
+font-size:20px;
+
+font-weight:600;
+
+border-radius:0 14px 14px 0;
+
+}
+/* ================= MOOD CARD ================= */
+
+.mood{
+
+    background:#F8F4ED;
+
+    padding:70px 80px;
+
+    display:flex;
+
+    justify-content:flex-end;
+
+}
+
+
+.mood-card{
+
+    width:460px;
+
+    background:#092016;
+
+    border-radius:18px;
+
+    padding:35px;
+
+    color:white;
+
+    box-shadow:0 20px 50px rgba(0,0,0,.25);
+
+    border:1px solid rgba(212,165,82,.15);
+
+}
+
+
+
+.mood-card h2{
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:42px;
+
+    font-weight:600;
+
+    margin-bottom:10px;
+
+    color:white;
+
+}
+
+
+.mood-card h2::after{
+
+    content:" ♡";
+
+    color:var(--gold);
+
+}
+
+
+
+.mood-card p{
+
+    color:#c9c5bc;
+
+    margin-bottom:30px;
+
+    font-size:17px;
+
+}
+
+
+
+
+/* Mood buttons grid */
+
+.mood-grid{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:15px;
+
+}
+
+
+
+.mood-grid button{
+
+
+    height:60px;
+
+    border-radius:10px;
+
+    background:#152D20;
+
+    color:white;
+
+    border:1px solid rgba(255,255,255,.12);
+
+    font-size:16px;
+
+    text-align:left;
+
+    padding-left:20px;
+
+    transition:.3s;
+
+
+}
+
+
+
+.mood-grid button:hover{
+
+    background:#D4A552;
+
+    color:#111;
+
+    transform:translateY(-3px);
+
+}
+
+
+
+
+
+/* Surprise button */
+
+
+.surprise{
+
+
+    margin-top:30px;
+
+    width:100%;
+
+    height:60px;
+
+    border-radius:10px;
+
+    background:#D4A552;
+
+    color:#111;
+
+    font-size:18px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+
+
+.surprise:hover{
+
+    background:#e7bb72;
+
+    transform:scale(1.02);
+
+}
+/* ================= FOOTER ================= */
+
+footer{
+
+    background:#081B12;
+
+    color:white;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:120px;
+
+    padding:55px 80px;
+
+    border-top:1px solid rgba(212,165,82,0.2);
+
+}
+
+
+footer div{
+
+    text-align:center;
+
+    width:230px;
+
+}
+
+
+footer i{
+
+    font-size:38px;
+
+    color:var(--gold);
+
+    margin-bottom:20px;
+
+}
+
+
+footer h4{
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:28px;
+
+    font-weight:600;
+
+    margin-bottom:8px;
+
+}
+
+
+footer p{
+
+    color:#cfc8bb;
+
+    font-size:15px;
+
+    letter-spacing:.5px;
+
+}
+
+
+/* ================= QUOTE SECTION ================= */
+
+
+.quote{
+
+    background:#081B12;
+
+    color:white;
+
+    text-align:center;
+
+    padding:55px 120px;
+
+}
+
+
+.quote h2{
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:38px;
+
+    font-weight:400;
+
+    color:#eee;
+
+}
+
+
+.quote h2::first-letter{
+
+    color:var(--gold);
+
+    font-size:70px;
+
+}
+/* ================= BOOK CARDS ================= */
+/* ================= DISCOVER SECTION ================= */
+
+
+.discover-section{
+
+    display:flex;
+
+    gap:50px;
+
+    padding:60px 80px;
+
+    align-items:flex-start;
+
+    background:#F8F4ED;
+
+}
+
+
+
+
+/* BOOK AREA */
+
+.books-container{
+
+    flex:1;
+
+}
+
+
+.title{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:30px;
+
+}
+
+
+.title h2{
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:40px;
+
+}
+
+
+
+.books{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:20px;
+
+}
+
+
+
+
+/* MOOD AREA */
+
+.mood{
+
+    width:400px;
+
+    padding:0;
+
+}
+
+/* ================= BOOK SECTION ================= */
+
+.books{
+
+    display:grid;
+
+    grid-template-columns:repeat(5, 1fr);
+
+    gap:25px;
+
+    width:100%;
+
+}
+
+
+.book{
+
+    background:white;
+
+    padding:15px;
+
+    border-radius:15px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.12);
+
+    transition:.3s;
+
+    width:100%;
+
+}
+
+
+.book img{
+
+    width:100%;
+
+    aspect-ratio:2/3;
+
+    object-fit:cover;
+
+    border-radius:10px;
+
+}
+
+
+.book h3{
+
+    font-size:17px;
+
+    margin-top:15px;
+
+    line-height:1.3;
+
+}
+
+
+.book p{
+
+    font-size:14px;
+
+    color:#777;
+
+}
+
+
+
+
+/* ================= TABLET ================= */
+@media(max-width:1000px){
+    .books{
+        grid-template-columns:repeat(3,1fr);
+    }
+}
+
+/* ================= MOBILE (600px and below) ================= */
+@media(max-width:600px){
+
+    /* --- Header & Nav --- */
+    header{
+        height:auto;
+        flex-direction:column;
+        padding:14px 5%;
+        gap:10px;
+    }
+
+    .logo h1{
+        font-size:26px;
+    }
+
+    .logo span{
+        font-size:10px;
+    }
+
+    nav{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        flex-wrap:wrap;
+        gap:8px;
+        width:100%;
+    }
+
+    nav a{
+        font-size:12px;
+        padding:8px 10px;
+        border-radius:20px;
+    }
+
+    .nav-icons{
+        padding:6px 10px;
+        gap:14px;
+        font-size:18px;
+    }
+
+    .profile{
+        width:36px;
+        height:36px;
+    }
+
+    /* --- Hero --- */
+    .hero{
+        flex-direction:column;
+        min-height:auto;
+        padding:40px 20px;
+        text-align:center;
+    }
+
+    .hero-text{
+        width:100%;
+    }
+
+    .hero-text h2{
+        font-size:32px;
+    }
+
+    .hero-text p{
+        font-size:15px;
+        margin:20px 0;
+    }
+
+    .tags{
+        justify-content:center;
+    }
+
+    /* --- Search box --- */
+    .search-box{
+        flex-direction:column;
+        width:100%;
+    }
+
+    .search-box input,
+    .search-box button{
+        width:100%;
+        height:55px;
+        border-radius:12px;
+    }
+
+    .search-box button{
+        margin-top:10px;
+    }
+
+    /* --- Hide mood card on mobile --- */
+    .mood,
+    .mood-card,
+    .mood-section,
+    #mood-card{
+        display:none;
+    }
+
+    /* --- Discover / Books section --- */
+    .discover-section{
+        flex-direction:column;
+        padding:30px 20px;
+        gap:30px;
+    }
+
+    .title h2{
+        font-size:26px;
+    }
+
+    .books{
+        
+        overflow-x:auto;
+        gap:16px;
+        padding-bottom:16px;
+        scroll-behavior:smooth;
+    }
+
+    .book{
+        min-width:150px;
+    }
+
+    .book img{
+        height:210px;
+    }
+
+    .book h3{
+        font-size:15px;
+    }
+
+    .book p{
+        font-size:12px;
+    }
+
+    /* --- Quote --- */
+    .quote{
+        padding:35px 24px;
+    }
+
+    .quote h2{
+        font-size:24px;
+    }
+
+    /* --- Footer --- */
+    footer{
+        flex-direction:column;
+        gap:30px;
+        padding:40px 24px;
+    }
+}
